@@ -1,0 +1,21 @@
+<section class="banner">  
+  <owl-carousel [options]="SlideOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >  
+    <div class="item" *ngFor="let img of Images">  
+    <div style="align-content: center">  
+    <img style="width: 100%;" src={{img}}/>
+        <!-- <h1 [ngStyle]="{
+            'color': h1Style ? 'grey' : 'black',
+            'size' : h1Style ? '1em' : '4em'
+        }">Home</h1> -->
+        <figcaption class="">
+            <h2 [ngStyle]="{
+                'color': h1Style ? 'grey' : 'black',
+                'size' : h1Style ? '1em' : '4em'
+            }">How To Use Owl Carousel In Angular</h2>
+            <p>Carousel is a slideshow for cycling a series of images or videos</p>
+            <button class="homecta" (click)="firstClick()">Explore More</button>
+        </figcaption>
+    </div>  
+    </div>  
+    </owl-carousel>  
+</section>  

@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+nav{
+    &.navbar{
+        &.bg-light{
+            background-color: #dcdbdc !important;
+            a{
+                color:#fff;
+            }
+            .navbar-nav{
+                .nav-item{
+                    a{
+                        color: #fff;
+                        transition: all 0.2s;
+                        &:hover{
+                            color:#333;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.banner{
+    .owl-theme{
+        .owl-nav{
+            position: absolute !important;
+            width: 100%;
+            top: 50%;
+            left: 0px;
+            transform: translate(0,-50%);
+            button{
+                position: absolute;
+                &:focus{
+                    outline: none;
+                }
+                &:hover{
+                    background: transparent;
+                }
+                &.disabled{
+                    opacity: 0;
+                }
+                span{
+                    color: #bfbfbf;
+                }
+                &.owl-prev{
+                    left: 20px;
+                }
+                &.owl-next{
+                    right: 20px;
+                }
+            }
+        }
+        .owl-dots{
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+    }
+}
+ul{
+    &.users{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        li{
+            background:rgba(238, 238, 238);
+            padding: 2em;
+            border-radius: 4px;
+            margin-bottom: 7px;
+            display: grid;
+            grid-template-columns: 60px auto;
+            display: inline-block;
+            margin: 10px;
+            img{
+                border-radius: 50%;
+                width: 100%;
+            }
+        }
+    }
+}

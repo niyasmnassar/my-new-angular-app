@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Contact Us</h1>
+            <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+                <h5 *ngIf="success">Your Form is Valid</h5>
+                <label>
+                    Name:
+                    <input type="text" formControlName="name">
+                    <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+                        <div *ngIf="messageForm.controls.name.errors.required">
+                            Your name is required
+                        </div>
+                    </div>
+                </label>
+                <label>
+                    Email:
+                    <input type="email" formControlName="email">
+                    <div *ngIf="submitted && messageForm.controls.email.errors" class="error">
+                        <div *ngIf="messageForm.controls.email.errors.required">
+                            Your email is required
+                        </div>
+                    </div>
+                </label>
+                <label>
+                    Phone:
+                    <input type="text" formControlName="phone">
+                    <div *ngIf="submitted && messageForm.controls.phone.errors" class="error">
+                        <div *ngIf="messageForm.controls.phone.errors.required">
+                            Your Phone number is required
+                        </div>
+                    </div>
+                </label>
+                <label>
+                    Message:
+                    <textarea formControlName="message"></textarea>
+                    <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
+                        <div *ngIf="messageForm.controls.message.errors.required">
+                            Your name is required
+                        </div>
+                    </div>
+                </label>
+                <input type="submit" value="send message" class="cta">
+            </form>
+            <div *ngIf="submitted" class="results">
+                <strong>Name:</strong>
+                <span>{{ messageForm.controls.name.value }}</span>
+                <strong>Email:</strong>
+                <span>{{ messageForm.controls.email.value }}</span>
+                <strong>Phone:</strong>
+                <span>{{ messageForm.controls.phone.value }}</span>
+                <strong>Message:</strong>
+                <span>{{ messageForm.controls.message.value }}</span>
+            </div>
+        </div>
+    </div>
+</div>
